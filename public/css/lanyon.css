@@ -441,6 +441,18 @@ a.pagination-item:hover {
  * Based on colors from Base16: http://chriskempson.github.io/base16/#default.
  */
 
+/* Pink */
+.theme-base-0p .sidebar,
+.theme-base-0p .sidebar-toggle:active,
+.theme-base-0p #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #FB897E;
+}
+.theme-base-0p .container a,
+.theme-base-0p .sidebar-toggle,
+.theme-base-0p .related-posts li a:hover {
+  color: #FB897E;
+}
+
 /* Red */
 .theme-base-08 .sidebar,
 .theme-base-08 .sidebar-toggle:active,
