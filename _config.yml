@@ -8,8 +8,8 @@ permalink:           pretty
 title:               기록하는 공간
 tagline:             ''
 description:         ''
-url:                 http://seon54.github.io
-baseurl:             http://seon54.github.io
+url:                 https://seon54.github.io
+baseurl:             https://seon54.github.io
 paginate:            5
 
 # About/contact
