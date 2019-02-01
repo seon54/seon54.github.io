@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Node.js] Express (1) 시작하기
+title: Express (1) 시작하기
 tags:
 - node.js
 ---
