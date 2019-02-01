@@ -338,7 +338,11 @@ a.sidebar-nav-item:focus {
   margin-bottom: 1rem;
   color: #9a9a9a;
 }
-
+.details{
+  display:block;
+  margin-bottom:1rem;
+  margin-top:0.7rem;
+}
 /* Related posts */
 .related {
   padding-top: 2rem;
