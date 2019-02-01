@@ -2,7 +2,7 @@
 layout: post
 title: Express (1) 시작하기
 tags:
-- node.js
+- Node.js
 ---
 
 ### Express 설치
