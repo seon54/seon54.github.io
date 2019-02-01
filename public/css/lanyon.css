@@ -72,7 +72,23 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100%;
 }
-
+.tags {
+  display:inline;
+  margin-right:10px;
+  float:right;
+}
+.tags a{
+  margin: 4.5px;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+  font-size:17px;
+  font-family:"PT Sans",sans-serif;
+  color: black;
+  padding: 4px 6px;
+  display: inline-block;
+  text-decoration: none;
+  position:relative;
+}
 
 /*
  * Container
