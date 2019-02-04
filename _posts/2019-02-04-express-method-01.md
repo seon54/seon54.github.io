@@ -21,12 +21,12 @@ Node의 http.Server.listen() 메소드와 같은 역할을 한다. 만약 포트
 
 
 
-```Node.js
+{% highlight js %}
 var express = require('express');
 var app = express();
 
 app.listen(3000);
-```
+{% endhighlight %}
 
 
 
