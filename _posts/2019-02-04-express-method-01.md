@@ -35,8 +35,8 @@ callback 함수와 함께 지정한 path로 HTTP GET 요청을 라우팅한다.
 
 |  전달인자  | 설명                                                         | 기본값 |
 | :--------: | :----------------------------------------------------------- | :----: |
-|   `path`   | 미들웨어 함수가 호출되는 path는 아래와 같다. <br><ul><li>path를 나타내는 문자열</li><li>path 패턴</li><li>path에 맞는 정규표현식</li><li>위의 조합에 해당되는 배열  </li></ul> [예제](https://expressjs.com/ko/4x/api.html#path-examples) |  '/'   |
-| `callback` | callback 함수는 아래와 같다.<br><ul><li>미들웨어 함수</li><li>comma로 구분된 연속된 미들웨어 함수</li><li>미들웨어 함수의 배열</li><li>위의 모든 것의 조합</li></ul>[예제](https://expressjs.com/ko/4x/api.html#middleware-callback-function-examples) |  none  |
+|   `path`   | 미들웨어 함수가 호출되는 path는 아래와 같다. <br>1. path를 나타내는 문자열<br>2. path 패턴<br> 3. path에 맞는 정규표현식<br> 4. 위의 조합에 해당되는 배열 <br> [예제](https://expressjs.com/ko/4x/api.html#path-examples) |  '/'   |
+| `callback` | callback 함수는 아래와 같다.<br>1. 미들웨어 함수<br> 2. comma로 구분된 연속된 미들웨어 함수<br> 3. 미들웨어 함수의 배열<br> 4.위의 모든 것의 조합<br>[예제](https://expressjs.com/ko/4x/api.html#middleware-callback-function-examples) |  none  |
 
 
 
