@@ -6,17 +6,19 @@ permalink:           pretty
 
 # Setup
 title:               기록하는 공간
-tagline:             ''
-description:         ''
+tagline:             ""
+description:         ""
 url:                 https://seon54.github.io
-baseurl:             https://seon54.github.io
+baseurl:             ""
 paginate:            5
 
 # About/contact
 author:
-  name:              Seonhyeong Park
-  url:               
-  email:             seonhyeongpark54@gmail.com
+  name:              스녕
+  description:       느려도 멈추지 않는 거북이
+  contact:               
+    github:          https://github.com/seon54 
+    email:           seonhyeongpark54@gmail.com
 
 # Custom vars
 version:             1.0.0
