@@ -11,6 +11,9 @@ description:         ""
 url:                 https://seon54.github.io
 baseurl:             ""
 paginate:            5
+sass:
+  style: compressed
+  sass_dir: _scss 
 
 # About/contact
 author:
