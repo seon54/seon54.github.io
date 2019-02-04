@@ -36,24 +36,17 @@
 
 /* Prevent scroll on narrow devices */
 
-@font-face { 
-  font-family: 'SeoulNamsanM'; 
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff'); 
-  font-weight: normal; 
-  font-style: normal; 
-}
-
 html,
 body {
   overflow-x: hidden;
 }
 
 html {
-  font-family: "SeoulNamsanM", Georgia, "Times New Roman", serif;
+  font-family: "NanumSquare", Georgia, "Times New Roman", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "SeoulNamsanM", Helvetica, Arial, sans-serif;
+  font-family: "NanumSquare", Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #313131;
   letter-spacing: -.025rem;
@@ -82,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
   background-color: #F9F9F9;
   font-size:17px;
-  font-family:"PT Sans",sans-serif;
+  font-family:"NanumSquares",sans-serif;
   color: black;
   padding: 4px 6px;
   display: inline-block;
@@ -396,7 +389,7 @@ a.sidebar-nav-item:focus {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "SeoulNamsanM", Helvetica, Arial, sans-serif;
+  font-family: "NanumSquare", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
 }
