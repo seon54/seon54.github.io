@@ -33,7 +33,7 @@ nav:
     - '/post/'
     - { Node.js: '/post/nodejs/' }
     - { Tool: '/post/tool/' }  
-    - { 생각과 경험: '/post/think/' }
+    
   Tags:
     - '/tags/'
 
