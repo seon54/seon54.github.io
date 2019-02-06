@@ -29,10 +29,10 @@ nav:
     - '/'
   About:          
     - '/about/'
-  Post:           
-    - '/post/'
-    - { Node.js: '/post/nodejs/' }
-    - { Tool: '/post/tool/' }  
+  Category:           
+    - '/category/'
+    - { Node.js: '/category/nodejs/' }
+    - { Tool: '/category/tool/' }  
     
   Tags:
     - '/tags/'
