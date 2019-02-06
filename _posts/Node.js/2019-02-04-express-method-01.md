@@ -2,6 +2,8 @@
 layout: post
 title: Express (2) Application Methods - listen & get
 shortinfo: Express의 Application Method <strong>listen</strong>과 <strong>get</strong> 알아보기
+category: Node.js
+permalink: /nodejs/:year/:month/:day/:title/
 tags:
 - Node.js
 
