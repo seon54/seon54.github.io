@@ -36,8 +36,6 @@ nav:
     - { 생각과 경험: '/post/think/' }
   Tags:
     - '/tags/'
-  Github Project: 
-    - 'http://seon54.github.io/'
 
 # Custom vars
 version:             1.0.0
