@@ -31,8 +31,8 @@ nav:
     - '/about/'
   Category:           
     - '/category/'
-    - { Node.js: '/category/nodejs/' }
-    - { Tool: '/category/tool/' }  
+    - { Node.js: '/category/#nodejs' }
+    - { Tool: '/category/#tool' }  
     
   Tags:
     - '/tags/'
