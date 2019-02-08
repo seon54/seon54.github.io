@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Express (1) 시작하기
+title: Express 시작하기
 shortinfo: Express 설치하기
 category: Node.js
 permalink: /nodejs/:year/:month/:day/:title/
 tags:
+- Express
 - Node.js
 ---
 
