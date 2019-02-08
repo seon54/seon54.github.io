@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Express (3) Middleware - 1
+title: Express Middleware - 1
 category: Node.js
 shortinfo: Express Middleware 시작하기, morgan & helmet
 tags:
