@@ -9,7 +9,7 @@ title:               기록하는 공간
 tagline:             ""
 description:         ""
 url:                 https://seon54.github.io
-baseurl:             ""
+baseurl:             https://seon54.github.io
 paginate:            5
 sass:
   style: compressed
