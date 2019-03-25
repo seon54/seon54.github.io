@@ -33,6 +33,7 @@ nav:
     - '/category/'
     - { JavaScript: '/category/#javascript' }
     - { Node.js: '/category/#nodejs' }
+    - { Network: '/category/#network' }
     - { Tool: '/category/#tool' }  
     
   Tags:
