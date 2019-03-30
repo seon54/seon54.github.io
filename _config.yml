@@ -35,6 +35,7 @@ nav:
     - { Node.js: '/category/#nodejs' }
     - { Network: '/category/#network' }
     - { Tool: '/category/#tool' }  
+    - { 후기: '/category/#review' }  
     
   Tags:
     - '/tags/'
