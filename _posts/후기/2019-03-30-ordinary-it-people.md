@@ -13,6 +13,8 @@ tags:
 
 Developer Circles Seoul에서 주최한 We're just ordinary IT people에 다녀왔다. 7시부터 10까지 진행되는 행사였지만 3시간이 너무 짧게 느껴질 정도로 즐겁고 재밌었다.
 
+![행사 시작]({{ site.baseurl }}/public/img/ordinary-it-people.jpg)
+
 ```
 19:00 - 19:20 / 등록
 19:20 - 19:30 / Greeting with 샌드위치
@@ -42,3 +44,7 @@ Developer Circles Seoul에서 주최한 We're just ordinary IT people에 다녀�
 
 
 부끄럽고 긴장돼서 참가하지 않았던 네트워킹을 처음 참가해보았다. 이렇게 재밌는데 왜 그동안 지레 겁먹었을까 후회할만큼 재밌었다. 지정 마이크 시간에 주최하고 싶은 행사에 대해 이야기 하신 분께 행사에 대해 물어보기도 하고 10년차 개발자 분께 다양한 조언을 듣기도 했다. 그동안은 개발 행사를 참가하면 60% 정도만 즐긴 기분이었는데 어제는 80%까지 올린 느낌이다. 앞으로도 다양한 행사를 참가하면서 많은 분들과 이야기 하고 동기부여 될 수 있는 시간들을 갖고 싶다. 
+
+![정말 귀여운 사탕]({{ site.baseurl }}/public/img/candy.jpg)
+
+![코스터]({{ site.baseurl }}/public/img/coaster.jpg)
