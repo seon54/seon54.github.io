@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Women of DevC Seoul: We're just ordinary IT people 후기
+title: Women of DevC Seoul We're just ordinary IT people 후기
 category: 후기
 shortinfo: Women of Developer Circles Seoul에서 주최한 We're just ordinary IT people 행사 후기
 tags:
