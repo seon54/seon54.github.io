@@ -33,6 +33,7 @@ nav:
     - '/category/'
     - { JavaScript: '/category/#javascript' }
     - { Node.js: '/category/#nodejs' }
+    - { Python: '/category/#python' }
     - { Network: '/category/#network' }
     - { Tool: '/category/#tool' }  
     - { 후기: '/category/#review' }  
