@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Express 시작하기
 shortinfo: Express 설치하기
 category: Node.js

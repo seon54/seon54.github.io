@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Python 기본 명령어 알아보기
 category: Python
 shortinfo: Python 기본 명령어를 알아봅니다.

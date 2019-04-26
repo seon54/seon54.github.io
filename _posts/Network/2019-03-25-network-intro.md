@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: 컴퓨터 네트워크와 구성 요소
 category: Network
 shortinfo: 컴퓨터 네트워크와 구성 요소에 대한 간단한 정리

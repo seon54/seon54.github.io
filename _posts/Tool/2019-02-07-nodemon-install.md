@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: Nodemon으로 Node.js 자동으로 재시작하기
 category: Tool
 shortinfo: Node application을 자동으로 재시작하는 nodemon
