@@ -10,7 +10,7 @@ tagline:             ""
 description:         ""
 url:                 https://seon54.github.io
 baseurl:             https://seon54.github.io
-paginate:            5
+paginate:            7
 sass:
   style: compressed
   sass_dir: _scss 
