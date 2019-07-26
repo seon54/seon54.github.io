@@ -10,7 +10,7 @@ tagline:             ""
 description:         ""
 url:                 https://seon54.github.io
 baseurl:             https://seon54.github.io
-paginate:            5
+paginate:            7
 sass:
   style: compressed
   sass_dir: _scss 
@@ -35,6 +35,7 @@ nav:
     - { Node.js: '/category/#nodejs' }
     - { Python: '/category/#python' }
     - { Network: '/category/#network' }
+    - { Algorithms: '/category/#algorithms' }
     - { Tool: '/category/#tool' }  
     - { 후기: '/category/#review' }  
     
