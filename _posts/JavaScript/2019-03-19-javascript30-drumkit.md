@@ -5,7 +5,7 @@ title: JavaScript30 - Drum Kit
 category: JavaScript
 shortinfo: wesbos의 JavaScript30을 듣고 정리한 내용
 tags:
-- JavaScript
+- javascript
 ---
 
 

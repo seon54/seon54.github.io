@@ -5,8 +5,8 @@ title: PyCharm에서 프로젝트 시작하기
 category: Python
 shortinfo: PyCharm에서 프로젝트 시작하는 방법과 기본 프로젝트 구조
 tags:
-- Python
-- Django
+- python
+- django
 ---
 
 

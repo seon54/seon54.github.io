@@ -5,7 +5,7 @@ title: Pythonanywhere에서 배포하기
 category: Python
 shortinfo: Pythonanywhere에서 배포하는 방법을 알아봅니다.
 tags:
-- Python
+- python
 ---
 
 

@@ -5,8 +5,8 @@ title: Express Router 1
 category: Node.js
 shortinfo: Express Router의 기본 형태와 express.Router 살펴보기
 tags:
-- Node.js
-- Express
+- node.js
+- express
 
 ---
 

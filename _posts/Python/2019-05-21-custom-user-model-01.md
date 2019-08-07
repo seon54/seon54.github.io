@@ -5,8 +5,8 @@ title: Custom user model 만들기
 category: Python
 shortinfo: AbstractBaseUser를 상속하여 cumsom user model을 만들어봅니다.
 tags:
-- Python
-- Django
+- python
+- django
 ---
 
 

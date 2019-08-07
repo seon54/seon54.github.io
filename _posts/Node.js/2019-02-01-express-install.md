@@ -6,8 +6,8 @@ shortinfo: Express 설치하기
 category: Node.js
 permalink: /nodejs/:year/:month/:day/:title/
 tags:
-- Express
-- Node.js
+- express
+- node.js
 ---
 
 # Express 설치

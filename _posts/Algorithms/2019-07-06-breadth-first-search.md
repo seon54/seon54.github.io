@@ -5,7 +5,7 @@ title: 알고리즘 - 너비 우선 탐색(Breadth First Search)
 category: Algorithms
 shortinfo: 너비 우선 탐색에 대한 설명과 간단한 예제
 tags:
-- Algorithms
+- algorithms
 ---
 
 

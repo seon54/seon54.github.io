@@ -5,7 +5,7 @@ title: JavaScript Array Method 1
 category: JavaScript
 shortinfo: filter, map, sort 짧은 정리
 tags:
-- JavaScript
+- javascript
 
 
 ---

@@ -5,7 +5,7 @@ title: JavaScript Array Method 2
 category: JavaScript
 shortinfo: some, every, find, findIndex 짧은 정리
 tags:
-- JavaScript
+- javascript
 
 ---
 
