@@ -59,47 +59,45 @@ docker run localhost:5000/hello-world
 
 먼저 ssl 인증서가 필요하다. openssl을 이용해서 인증서를 발급하도록 한다. 아래에서 개인키(key)와 인증요청서(csr)의 이름은 CA로 설정하며 원하는 이름으로 설정하도록 한다. 
 
-1. 폴더 생성
+  1. 폴더 생성
 
 ```shell
 mkdir cert
 ```
 
-2. 개인키 생성
+  2. 개인키 생성
 
 ```powershell
 openssl genrsa -aes256 -out CA.key 2048
 ```
 
-3. 개인키 권한 설정: group과 other의 permission 제거
+  3. 개인키 권한 설정: group과 other의 permission 제거
 
 ```powershell
 chmod 600 server.key
 ```
 
-4. 인증요청서 생성
+  4. 인증요청서 생성
 
 ```powershell
 openssl req -new -key CA.key -out CA.csr 
 ```
 
-5. 인증서 생성: 유효기간(365일 설정)
+  5. 인증서 생성: 유효기간(365일 설정)
 
 ```powershell
 openssl x509 -req -days 365 -in CA.csr -signkey CA.key -out CA.crt
 ```
 
-#### 
-
 ## Insecure-registries 추가하기
 
 Insecure-registries에 이미지를 추가했던 로컬 서버의 ip를 추가해야 한다. 윈도우에서는 ipconfig 맥과 리눅스에서는 ifconfig로 ip 주소를 확인한다.
 
-1. ##### 윈도우 & 맥
+  1. ##### 윈도우 & 맥
 
 윈도우와 맥에서는 도커를 설치할 때 Docker desktop이 설치된다. docker desktop에서 prefrences로 들어간다. 거기서 Daemon에 들어가 확인한 서버의 ip 주소를 5000 포트와 함께 추가한다. (예: 172.16.254.1:5000)
 
-2. ##### 리눅스
+  2. ##### 리눅스
 
 `/etc/docker` 경로에 들어가면 daemon.json 파일이 있다. `vi daemon.json` 명령어로 파일을 수정하여 아래의 내용을 ip 주소를 수정하여 추가한다. 
 
