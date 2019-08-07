@@ -99,7 +99,7 @@ Insecure-registries에 이미지를 추가했던 로컬 서버의 ip를 추가�
 
 - 리눅스
 
-`/etc/docker` 경로에 들어가면 daemon.json 파일이 있다. `vi daemon.json` 명령어로 파일을 수정하여 아래의 내용을 ip 주소를 수정하여 추가한다. 
+`/etc/docker` 경로에 들어가면 daemon.json 파일이 있다. `vi daemon.json` 명령어로 아래의 내용을 ip 주소를 수정하여 추가한다. 
 
 ```json
 {
