@@ -6,7 +6,7 @@ title: Docker Registry 구축하기
 category: Docker
 shortinfo: Docker Registry 구축하고 외부 서버에서 이미지 사용하는 방법 알아보기
 tags:
-- Docker
+- docker
 ---
 
 # Docker Registry 구축하기 
