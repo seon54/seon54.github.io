@@ -74,7 +74,7 @@ openssl genrsa -aes256 -out CA.key 2048
 - 개인키 권한 설정: group과 other의 permission 제거
 
 ```powershell
-chmod 600 server.key
+chmod 600 CA.key
 ```
 
 - 인증요청서 생성
