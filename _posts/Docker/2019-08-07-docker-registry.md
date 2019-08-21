@@ -17,10 +17,10 @@ tags:
 docker pull registry 
 ```
 
--n 옵션으로 이름을 정하고 --restart를 always로 설정한다. 백그라운드에서 실행되도록 -d 옵션과 -p 옵션으로 포트를 설정하여 이미지를 실행한다.
+--name 옵션으로 이름을 정하고 --restart를 always로 설정한다. 백그라운드에서 실행되도록 -d 옵션과 -p 옵션으로 포트를 설정하여 이미지를 실행한다.
 
 ```shell
-docker run -n registry --restart=always -d -p 5000:5000 registry
+docker run --name registry --restart=always -d -p 5000:5000 registry
 ```
 
 
@@ -70,7 +70,7 @@ openssl genrsa -aes256 -out CA.key 2048
 - 개인키 권한 설정: group과 other의 permission 제거
 
 ```powershell
-chmod 600 server.key
+chmod 600 CA.key
 ```
 
 - 인증요청서 생성
@@ -116,7 +116,7 @@ docker run -d -p 5000:5000 -v $(pwd)/cert \
 -e REGISTRY_HTTP_TLS_CERTIFICATE=/cert/CA.crt \ 
 -e REGISTRY_HTTP_TLS_KEY=/cert/CA.key \
 -e REGISTRY_HTTP_ADDR=localhost:5000 \
---restart=always -n registry registry
+--restart=always --name registry registry
 ```
 
 외부 서버에서 registry를 실행하고 나서 로컬 서버의 registry에 푸시한 이미지를 받도록 하며 ip는 아래와 같다고 가정한다.
