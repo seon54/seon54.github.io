@@ -10,8 +10,6 @@ tags:
 ---
 
 
-# Custom user model 만들기
-
 ### AbstractBaseUser
 AbstractBaseUser는 해시 비밀번호와 토큰화된 비밀번호 리셋을 포함한다. 
 

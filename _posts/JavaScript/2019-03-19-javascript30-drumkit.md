@@ -8,12 +8,7 @@ tags:
 - javascript
 ---
 
-
-
-# JavaScript30 - Drum Kit
-
 > wesbos의 JavaScript30(https://javascript30.com/)을 듣고 공부한 내용을 정리합니다.
-
 
 
 `keydown`  이벤트는 키가 눌릴 때 발생하며 `keypress`와 다르게 모든 키에 적용된다. 

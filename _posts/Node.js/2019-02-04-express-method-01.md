@@ -11,16 +11,9 @@ tags:
 
 ---
 
-
-
-# Express Application Methods - listen & get
-
 > YouTube cloning  강의를 들으며 배운 내용을 복습합니다.
 
-
-
 ## app.listen([port[, host[,backlog]]][,callback])
-
 Node의 http.Server.listen() 메소드와 같은 역할을 한다. 만약 포트를 생략하거나 0일 경우,  임의로 사용되지 않은 포트를 지정한다. 
 
 

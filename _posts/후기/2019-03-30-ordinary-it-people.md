@@ -8,9 +8,7 @@ tags:
 - 행사
 ---
 
-
-
-# We're just ordinary IT people
+## We're just ordinary IT people
 
 Developer Circles Seoul에서 주최한 We're just ordinary IT people에 다녀왔다. 7시부터 10까지 진행되는 행사였지만 3시간이 너무 짧게 느껴질 정도로 즐겁고 재밌었다.
 

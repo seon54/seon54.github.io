@@ -9,11 +9,6 @@ tags:
 ---
 
 
-
-# Pythonanywhere에서 배포하기
-
-
-
 ## GitHub
 
 먼저 GitHub에서 새 레포지토리를 만든다. 배포할 프로젝트에 `.gitignore` 파일을 만든 후 아래 내용을 추가한다. 또는 gitignore를 검색하면 각 언어마다 추가할 내용을 확인할 수 있다.

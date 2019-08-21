@@ -10,11 +10,6 @@ tags:
 ---
 
 
-
-# PyCharm에서 프로젝트 시작하기
-
-
-
 ## 프로젝트 생성하기
 
 파이썬과 파이참을 설치한 후,  `File > New Project` 에 들어가면 `Create Project` 창이 뜬다. `Location`에서 위치와 프로젝트 이름을 설정한다. `Project Interpereter: New Virtual environment`의 왼쪽 화살표를 누르면 가상환경을 설정할 수 있다. 프로젝트 생성 후, Terminal에서 `pip install django` 명령어로 장고를 설치한다.
@@ -22,11 +17,9 @@ tags:
 설치 후 명령어로 장고 프로젝트를 만든다. `django-admin startproject config . `  명령어에서는 반드시 config를 쓴 후 한 칸 띄고 .을 붙여야 한다. 명령어를 실행한 후에는 config 폴더와 manage.py 파일이 생성된다. 그 후 데이터베이스를 생성하는 `python manage.py migrate` 명령어를 실행한다. 이 명령어를 통해 DB를 초기화 하고 DB 파일을 생성하고 프로젝트에 db.sqlite3 파일이 생긴 것을 확인할 수 있다.
 
 
-
 ## 관리자 계정 생성하기
 
 `python manage.py createsuperuser`로 관리자를 생성할 수 있다. 계정명, 이메일, 비밀번호를 입력하게 되어 있고 이메일은 입력하지 않아도 되며 비밀번호를 입력할 때는 터미널에서는 빈칸으로 나온다. 그 후 `python manage.py runserver`로 서버를 실행하여 localhost:8000 또는 127.0.0.1:8000 주소로 들어가면 장고가 만들어주는 메인 화면을 볼 수 있다. 위의 주소에 /admin을 추가하면 관리자 페이지로 갈 수 있으며 관리자를 생성할 때의 계정과 비밀번호를 입력하면 로그인할 수 있다.
-
 
 
 ## 프로젝트 구조 살펴보기

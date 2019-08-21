@@ -12,9 +12,7 @@ tags:
 
 
 
-# Python 기본 명령어
-
-
+## Python 기본 명령어
 
 django-admin startproject projectname` : 장고  프로젝트를 만드는 명령어
 

@@ -8,11 +8,7 @@ tags:
 - algorithms
 ---
 
-
-
-
-
-# 알고리즘 - 너비 우선 탐색(Breadth First Search)
+## 알고리즘 - 너비 우선 탐색(Breadth First Search)
 
 너비 우선 탐색은 최단 거리를 찾기 위해 사용된다. 예를 들어 아래와 같은 상황에 사용된다.
 

@@ -8,8 +8,6 @@ tags:
 - 행사
 ---
 
-# P.O.W.E.R Writing
-
 > 19.05.28일에 진행된 Writing the Docs 밋업에서 김지현 님의 발표를 정리한 글입니다.
 
 ## P.O.W.E.R Writing이란

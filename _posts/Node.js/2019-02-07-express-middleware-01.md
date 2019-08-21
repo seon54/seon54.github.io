@@ -9,16 +9,9 @@ tags:
 - node.js
 ---
 
-
-
-# Express Middleware (1)
-
 > YouTube cloning  강의를 들으며 배운 내용을 복습합니다.
 
-
-
 ## Middleware?
-
 Middleware 함수는 어플리케이션의 요청-응답 주기 내에서 request, response 그리고 다음의 middleware 함수에 대한 접근 권한을 가진다. 각각은 req, res, next로 사용한다.  
 
 Middleware 함수는 아래의 기능을 가진다.

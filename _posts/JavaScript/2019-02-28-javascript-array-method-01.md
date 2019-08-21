@@ -10,12 +10,6 @@ tags:
 
 ---
 
-
-
-# JavaScript Array Method 1  
-
-
-
 ## Array.prototype.filter()
 
 `filter()`는 주어진 함수를 통과하는 요소를 새로운 배열로 만들어 반환한다.

@@ -9,12 +9,6 @@ tags:
 
 ---
 
-
-
-# JavaScript Array Method 2 
-
-
-
 ## Array.prototype.some()
 
 `some()`는 배열의 어떤 요소라도 주어진 함수를 통과하면 true를 반환한다.

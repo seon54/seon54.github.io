@@ -10,9 +10,6 @@ tags:
 
 ---
 
-
-
-# Express Router
 > YouTube cloning  강의를 들으며 배운 내용을 복습합니다.
 
 Routing은 URI 또는 특정 HTTP 요청 메소드(GET, POST 등)인 특정 엔드포인트의 클라이언트 요청에  어떻게 어플리케이션이 응답하는지를 결정하는 것을 말하며, 각 라우트는 하나 이상의 handler 함수를 가질 수 있고 이  라우트가 일치할 때 실행된다.

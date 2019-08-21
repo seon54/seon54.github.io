@@ -10,11 +10,6 @@ tags:
 ---
 
 
-
-# Windows에서 Django와 Apache 연동하기
-
-
-
 ## 설치
 파이썬이 설치되어 있다고 가정하고 아래의 파일을 설치한다.
 1. Apache - [다운로드](https://www.apachelounge.com/download/)
