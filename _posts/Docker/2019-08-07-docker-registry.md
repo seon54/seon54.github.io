@@ -9,10 +9,6 @@ tags:
 - docker
 ---
 
-# Docker Registry 구축하기 
-
-
-
 ## 설치 & 실행
 
 먼저 docker에서 registry 이미지를 받는다.
