@@ -283,9 +283,7 @@ Httpd_vhosts.conf 파일과 장고 settings.py를 수정한 후 http://localhost
 
 
 ### Commands
-
-자주 사용했던 명령어
-
+자주 사용한 명령어
 - `sudo apachectl start` : httpd 서버 실행
 - `sudo apachectl restart` : httpd 서버 재실행
 - `sudo apachectl stop` : httpd 서버 멈추기
@@ -298,28 +296,22 @@ Httpd_vhosts.conf 파일과 장고 settings.py를 수정한 후 http://localhost
 
 
 ### Path
-
 기존에 설치되어 있는 apache와 brew 명령어로 설치한 apache의 경로
-
-##### apache(기존)
-
+###### apache(기존)
 - 설정: /etc/apache2/httpd.conf
 - 가상 호스트: /etc/apache2/extra/httpd-vhosts.conf
 - 로그: /var/log/apache2
 - 모듈: /usr/libexec/apache2
 - Hosts: /etc/hosts
 
-##### apache(설치)
-
+###### apache(설치)
 - 설정 : /usr/local/etc/httpd/httpd.conf 
 - 가상 호스트: /usr/local/etc/httpd/extra/httpd-vhosts.conf
 - 로그: /usr/local/var/log/httpd
 - 모듈: /usr/local/lib/httpd/modules
 
 
-
 ### Errors
-
 apache와 django를 연동하며 겪은 에러들이다. 아파치 서버를 올린 후 에러가 났을 때는 `Debug=True` 로 설정한 후 로그를 확인하면 원인을 찾기 더 편하다. 
 
 ```shell
