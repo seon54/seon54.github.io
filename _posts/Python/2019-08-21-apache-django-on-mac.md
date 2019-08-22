@@ -118,10 +118,10 @@ $ mod_wsgi-express start-server
 
 ##### httpd.conf
 
-먼저 httpd.conf 파일부터 수정한다. `Listen`에 포트가 8080으로 되어 있는데 8000으로 수정하고 주석 처리가 되어 있는 가상환경 관련 설정을 해제해준다. 그리고 `ServerName`를 각자의 호스트명으로 지정해준다. 
+먼저 httpd.conf 파일부터 수정한다. `Listen`에 포트가 8080으로 되어 있는데 80으로 수정하고 주석 처리가 되어 있는 가상환경 관련 설정을 해제해준다. 그리고 `ServerName`를 각자의 호스트명으로 지정해준다. 
 
 ```shell
-Listen 8000
+Listen 80
 ServerName localhost
 LoadModule vhost_alias_module lib/httpd/modules/mod_vhost_alias.so
 Include /usr/local/etc/httpd/extra/httpd-vhosts.conf
@@ -159,31 +159,29 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ```
 
 ```shell
-<VirtualHost *:8000>
-    ServerName localhost    
-    
-    ErrorLog "/Users/myuser/desktop/project/django/log/error.log" 
-    CustomLog "/Users/myuser/desktop/project/django/log/access.log"  common
+<VirtualHost *:80>   
+    ErrorLog "/Users/myuser/desktop/log/error.log" 
+    CustomLog "/Users/myuser/desktop/log/access.log"  common
       
-    WSGIDaemonProcess myproject python-home=/Users/myuser/anaconda3/envs/newenv python-path=/users/myuser/anaconda3/envs/newenv/lib/python3.6/site-packages
-    WSGIProcessGroup myproject
+    WSGIDaemonProcess app1 python-home=/Users/myuser/anaconda3/envs/newenv python-path=/users/myuser/anaconda3/envs/newenv/lib/python3.6/site-packages
+    WSGIProcessGroup app1
 
-    WSGIScriptAlias /  "/Users/myuser/desktop/project/django/server/wsgi.py" process-group=myproject
-    <Directory "/Users/myuser/desktop/project/django/server">
+    WSGIScriptAlias /  "/Users/myuser/desktop/project1/django/server/wsgi.py" process-group=app1
+    <Directory "/Users/myuser/desktop/project1/django/server">
         <Files wsgi.py>
             AllowOverride All
             Require all granted
         </Files>
     </Directory>
 
-    Alias /static/ "/Users/myuser/desktop/project/django/static/"
-    <Directory "/Users/myuser/desktop/project/django/static">
+    Alias /static/ "/Users/myuser/desktop/project1/django/static/"
+    <Directory "/Users/myuser/desktop/project1/django/static">
         AllowOverride All
         Require all granted
     </Directory>  
     
-    Alias /media/ "/Users/jlk/desktop/jlk/JBD-01A/JBD-01A-backend/media/"
-    <Directory "/Users/jlk/desktop/jlk/JBD-01A/JBD-01A-backend/media">
+    Alias /media/ "Users/myuser/desktop/project1/django/media/"
+    <Directory "Users/myuser/desktop/project1/django/media">
         AllowOverride All
         Require all granted
     </Directory> 
@@ -201,7 +199,86 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 $ sudo apachectl start
 ```
 
-ServerName을 localhost로 하고 포트를 8000으로 설정했으므로 http://localhost:8000에서 나의 장고 프로젝트를 확인할 수 있다. 
+ServerName을 localhost로 하고 포트를 80으로 설정했으므로 http://localhost에서 나의 장고 프로젝트를 확인할 수 있다. 
+
+
+
+## Multiple Vhosts
+
+###### *19.08.22 추가*
+
+처음부터 여러 개의 장고 프로젝트를 아파치 서버로 올리는 것이 목적이었기 때문에 VirtualHost를 수정해주었다. 먼저 `WSGIScriptAlias` 이름을 수정해주어야 한다. 위에서 설정한 `SeverName` 에서 설정한 localhost에서 연결되는 부분이므로 각 app의 이름으로 구분하도록 하였다. 위에서는 `/` 로 설정한 것을 `/app1`,  `/app2` 로 수정했다. 각각 localhost/app1, localhost/app2의 식으로 적용된다. 그리고 static과 media도 수정해야 한다. 처음 설정한 것처럼 `/static/` 과 `/media/`  alias 이름이 같게 되면 첫번째것만 인식하는 것 같았다. 그래서 기존 장고의 settings을 변경하고 각 app의 alias도 수정했다.
+
+```shell
+<VirtualHost *:80>    
+    ErrorLog "/Users/myuser/desktop/log/error.log" 
+    CustomLog "/Users/myuser/desktop/log/access.log"  common
+      
+    # app1
+    WSGIDaemonProcess app1 python-home=/Users/myuser/anaconda3/envs/newenv python-path=/users/myuser/anaconda3/envs/newenv/lib/python3.6/site-packages
+    WSGIProcessGroup app1
+
+    WSGIScriptAlias /app1  "/Users/myuser/desktop/project1/django/server/wsgi.py" process-group=app1
+    <Directory "/Users/myuser/desktop/project1/django/server">
+        <Files wsgi.py>
+            AllowOverride All
+            Require all granted
+        </Files>
+    </Directory>
+
+    Alias /app1/static/ "/Users/myuser/desktop/project1/django/static/"
+    <Directory "/Users/myuser/desktop/project1/django/static">
+        AllowOverride All
+        Require all granted
+    </Directory>  
+    
+    Alias /app1/media/ "/Users/myuser/desktop/project1/django/media/"
+    <Directory "/Users/myuser/desktop/project1/django/media">
+        AllowOverride All
+        Require all granted
+    </Directory> 
+    
+    # app2
+    WSGIDaemonProcess app2 python-home=/Users/myuser/anaconda3/envs/newenv python-path=/users/myuser/anaconda3/envs/newenv/lib/python3.6/site-packages
+    WSGIProcessGroup app2
+
+    WSGIScriptAlias /app2  "/Users/myuser/desktop/project2/django/server/wsgi.py" process-group=app2
+    <Directory "/Users/myuser/desktop/project2/django/server">
+        <Files wsgi.py>
+            AllowOverride All
+            Require all granted
+        </Files>
+    </Directory>
+
+    Alias /app2/static/ "/Users/myuser/desktop/project2/django/static/"
+    <Directory "/Users/myuser/desktop/project2/django/static">
+        AllowOverride All
+        Require all granted
+    </Directory>  
+    
+    Alias /app2/media/ "/Users/myuser/desktop/project2/django/media/"
+    <Directory "/Users/myuser/desktop/project2/django/media">
+        AllowOverride All
+        Require all granted
+    </Directory> 
+    
+</VirtualHost>
+```
+
+```python
+# project1/django/settings.py
+...
+# MEDIA_URL = '/media/'
+MEDIA_URL = '/app1/media/'
+
+
+# project2/django/settings.py
+...
+# MEDIA_URL = '/media/'
+MEDIA_URL = '/app2/media/'
+```
+
+Httpd_vhosts.conf 파일과 장고 settings.py를 수정한 후 http://localhost/app1과 http://localhost/app2에서 각 프로젝트를 확인할 수 있다. 
 
 
 
@@ -230,6 +307,7 @@ ServerName을 localhost로 하고 포트를 8000으로 설정했으므로 http:/
 - 가상 호스트: /etc/apache2/extra/httpd-vhosts.conf
 - 로그: /var/log/apache2
 - 모듈: /usr/libexec/apache2
+- Hosts: /etc/hosts
 
 ##### apache(설치)
 
@@ -242,7 +320,7 @@ ServerName을 localhost로 하고 포트를 8000으로 설정했으므로 http:/
 
 ### Errors
 
-apache와 django를 연동하며 겪은 에러
+apache와 django를 연동하며 겪은 에러들이다. 아파치 서버를 올린 후 에러가 났을 때는 `Debug=True` 로 설정한 후 로그를 확인하면 원인을 찾기 더 편하다. 
 
 ```shell
 AH00557: httpd: apr_sockaddr_info_get() failed for myhost
