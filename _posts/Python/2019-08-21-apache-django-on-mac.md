@@ -141,7 +141,7 @@ WSGIPythonHome "/Users/myuser/anaconda3/envs/newenv"
 
 httpd-vhosts.conf에서는 가상환경에 대한 설정을 할 수 있다.  `ErrorLog`와 `CustomLog`에서 error log와 access log를 원하는 경로로 설정할 수 있다. [장고 공식 홈페이지](https://docs.djangoproject.com/en/2.2/howto/deployment/wsgi/modwsgi/#using-mod-wsgi-daemon-mode)에서는 윈도우 플랫폼이 아닌 곳에서 mod_wsgi를 실행할 때 daemon mode를 추천하며 `WSGIDaemonProcess`, `WSGIProcessGroup`, `WSGIScriptAlias` 에서 관련 설정을 해줄 수 있다. 먼저 `WSGIDaemonProcess` 와  `WSGIProcessGroup` 의 이름 그리고`WSGIScriptAlias` 의 process-group은 같은 값을 넣어준다. python-home에는 위의 `WSGIPythonHome`의 값과 같고 python-path에는 파이썬 라이브러리 경로를 적어준다. 
 
-`WSGIScriptAlias` 에는 django의 wsgi.py 파일이 위치한 경로를 적어준다. 아래의 <Directory>에도 설정해준다. 아래의 두 `Alias` 에는 각각 static 폴더와 media 폴더에 대한 설정을 해주고 있다. settings.py에서 static 파일과 media 폴더에 대한 설정이 필요하며 `python manage.py collectstatic` 명령어를 실행해주면 static 폴더가 생기며 관련 파일이 모이게 된다.
+`WSGIScriptAlias` 에는 django의 wsgi.py 파일이 위치한 경로를 적어준다. 아래의 <Directory>에도 설정해준다. 아래의 두 `Alias` 에는 각각 static 폴더와 media 폴더에 대한 설정을 해주고 있다. settings.py에서 static 파일과 media 폴더에 대한 설정이 필요하며 python manage.py collectstatic 명령어를 실행해주면 static 폴더가 생기며 관련 파일이 모이게 된다.
 
 ```python
 # settings.py
