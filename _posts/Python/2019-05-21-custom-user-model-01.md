@@ -14,13 +14,13 @@ tags:
 AbstractBaseUser는 해시 비밀번호와 토큰화된 비밀번호 리셋을 포함한다. 
 
 ##### USERNAME_FIELD 
-​	user model에서 고유한 식별자로 사용되는 필드명을 적는다. username, email 또는 그 외의 것들도 사용 가능하다. 이 필드는 항상 `unique=True`이어야 한다. 
+	user model에서 고유한 식별자로 사용되는 필드명을 적는다. username, email 또는 그 외의 것들도 사용 가능하다. 이 필드는 항상 `unique=True`이어야 한다. 
 
 ##### EMAIL_FIELD 
-​	user model에서 이메일 필드명을 적는다. 이 값은 `get_email_field_name()`의 리턴값으로 사용된다.
+	user model에서 이메일 필드명을 적는다. 이 값은 `get_email_field_name()`의 리턴값으로 사용된다.
 
 ##### REQUIRED_FIELDS
-​	python manage.py createsuperuser`로 사용자를 만들 때 필수로 입력하게 되는 필드 리스트이다. USERNAME_FIELD의 필드와 password는 항상 입력되기 때문에 포함시키지 않는다.
+	python manage.py createsuperuser`로 사용자를 만들 때 필수로 입력하게 되는 필드 리스트이다. USERNAME_FIELD의 필드와 password는 항상 입력되기 때문에 포함시키지 않는다.
 
 ```python
 from django.contrib.auth.models import AbstractBaseUser
@@ -141,4 +141,3 @@ AUTH_USER_MODEL = 'customauth.MyUser'
 참조
 
 [Django - Specifying a custom user model](<https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#specifying-a-custom-user-model>)
-
