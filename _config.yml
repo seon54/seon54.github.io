@@ -36,6 +36,7 @@ nav:
     - { Python: '/category/#python' }
     - { Docker: '/category/#docker' }
     - { Network: '/category/#network' }
+    - { Computer Architecture: '/category/#computer_architecture' }
     - { Database: '/category/#database' }  
     - { Algorithms: '/category/#algorithms' }
     - { Tool: '/category/#tool' }  
