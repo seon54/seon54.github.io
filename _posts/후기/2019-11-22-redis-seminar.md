@@ -41,7 +41,7 @@ tags:
 - Factorial: 이전에 계산한 값을 저장해서 사용
 - 접근속도가 다름
   ```
-  ***CPU Cache***(disk로 갈수록 capacity 높음, core로 갈수록 속도 빠름)
+  CPU Cache(disk로 갈수록 capacity 높음, core로 갈수록 속도 빠름)
   Disk
   Memory
   L3 cache
