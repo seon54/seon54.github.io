@@ -45,17 +45,17 @@ tags:
 
   > **CPU Cache**(disk로 갈수록 capacity 높음, core로 갈수록 속도 빠름)
   >
-  > ​							Disk
+  >Disk
   >
-  > ​							Memory
+  > Memory
   >
-  > ⬆️ capacity		L3 cache	⬇️ speed
+  > L3 cache
   >
-  > ​							L2 cache
+  > L2 cache
   >
-  > ​							L1 cache
+  > L1 cache
   >
-  > ​							Core
+  > Core
 
 - 전체 요청의 80%는 20%의 사용자
 
@@ -68,23 +68,10 @@ tags:
 ##### Cache 구조 2. Write back
 
 1. Web server는 모든 데이터를 cache에만 저장
-
 2. Cache에 특정 시간 동안의 데이터 저장
-
 3. Cache에 있는 데이터를 DB에 저장
-
 4. DB에 저장된 데이터 삭제
-
 5. 단점: 처음에 cache에 저장했기 때문에 리부팅 하게 될 경우(장애 발생) 데이터가 날아감
-
-   
-
-	1. WEB SERVER는 모든 데이터를 CACHE에만 저장
- 	2. CACHE에 특정 시간 동안의 데이터 저장
- 	3. CACHE에 있는 데이터를 DB에 저장
- 	4. DB에 저장된 데이터 삭제
-
-* 단점: 처음에 CACHE에 저장돼서 리부팅하면(장애가 생기면) 데이터가 날아감
 
 ## 왜 Collection이 중요한가
 
@@ -114,39 +101,32 @@ tags:
 ## Redis collections
 
 ##### Strings
-
 - 기본 사용법 
   - SET key value / GET key
   - 예) SET token:123 abcd / GET token:123
 
 ##### List
-
 - 기본 사용법
   - LPUSH(RPUSH) key elements
   - LPOP(RPOP) key
 
 ##### Sets
-
 - 기본 사용법
   - SADD key member
   - SISMEMBER key member 
   - SMEMBERS key
-
 - SMEMBERS : 모든 values를 가져오므로 데이터가 많을 경우 주의해서 사용
 
 ##### Sorted set
-
 - Score: double 타입이므로 값이 정확하지 않을 수 있음
   - 컴퓨터에서는 실수가 표현할 수 없는 정수값 존재
 
 ##### Hahses
-
 - 기본 사용법
   - HSET key field value
   - HGET key field
 
 ##### Collection 주의 사항
-
 - 하나의 collection에 너무 많은 아이템을 담으면 좋지 않다
   - 1만개 이하 몇 천개 수준으로 유지하는 게 좋음
 - Expire는 collection의 아이템 개별로 걸리지 않고 전체 collection에 대해서만 걸림
@@ -155,7 +135,6 @@ tags:
 ## Redis 운영
 
 ##### 메모리 관리를 잘하자
-
 - Redis는 in-memory data store
 - Physical memory 이상을 사용하면 문제가 발생
   - swap이 있다면 swap 사용으로 해당 메모리 page 접근시마다 늦어짐
@@ -168,14 +147,12 @@ tags:
 - 레디스는 메모리 파편화가 발생할 수 있음. 4.x대부터 메모리 파편화를 줄이도록 jemalloc에 힌트를 주는 기능이 들어갔으나 jemalloc 버전에 따라 다르게 동작할 수 있음
 
 메모리가 부족할 때
-
 - 좀 더 많은 장비로 migration
   - 메모리가 빡빡하면 migration중에 문제가 생길 수 있음
 - 있는 데이터 줄이기
   - 데이터를 일정 수준에서만 사용하도록 특정 데이터 줄임
 
 메모리를 줄이기 위한 설정
-
 - 기본적으로 콜렉션들은 아래의 자료 구조 사용
   - Hashes → hashtable을 하나 더 사용
   - Sorted set → skiplist와 hashtable 이용
@@ -184,13 +161,11 @@ tags:
 - ziplist 이용하기
 
 ziplist 구조
-
 - In-memory 특성 상, 적은 개수라면 선형 탐색을 하더라도 빠름
 - Lists, hashes, sorted sets 등을 ziplist로 대체해서 처리하는 설정 존재
 
 
 ##### O(N) 관련 명령어는 주의하자
-
 - Redis는 싱글 스레드
   - Redis가 동시에 여러 개의 명령을 처리할 수 있을까?
   - 단순한 get/set의 경우, 초당 10만 tps 이상 가능(CPU 속도 영향)
@@ -219,9 +194,7 @@ ziplist 구조
   - 현재는 set(O(1))을 이용해서 검색, 삭제하도록 수정됨
 - O(1) 명령어와 O(N) 명령어를 구분해서 사용해야 함
 
-
 ##### Replication
-
 - async replication
   - replication lag 발생할 수 있음
 - 'replicaof(>=5.0.0)' or 'slaveof' 명령으로 설정 가능
@@ -243,7 +216,6 @@ ziplist 구조
     - 예) 같은 네트워크 안에서 30gb를 쓰는 레디스 마스터 100대 정도가 리플리케이션을 동시에 재시작할 경우
 
 ##### 권장 설정 TIP
-
 - maxclient 설정 50000
 - RDB/AOF 설정 off
 - 특정 commands disable
@@ -255,7 +227,6 @@ ziplist 구조
 ## Redis 데이터 분산
 
 1. Consistent hashing
-
 2. Sharding 
   - 데이터를 어떻게 나눌 것인가?
   - 데이터를 어떻게 찾을 것인가?
@@ -271,7 +242,6 @@ ziplist 구조
     - 서버 한 대가 추가될 때 재분배 양이 많아짐
   - Indexed
     - 해당 key가 어디에 저장되어야 할 지 관리하는 서버가 따로 존재
-
 3. Redis cluster
   - Hash 기반으로 slot 16384로 구분
     - Hash 알고리즘은 CRC16 사용
@@ -289,23 +259,19 @@ ziplist 구조
 ## Redis Failover
 
 ##### Coordinator 기반 failover
-
 - zookeeper, etcd, consul 등의 coordinator 사용
 - coordinator 기반으로 설정을 관리한다면 동일한 방식으로 관리 가능
 - 해당 기능을 이용하도록 개발 필요
 
 ##### VIP(virtual ip)/DNS 기반 failover
-
 - 클라이언트에 추가적 구현이 필요없음
 - VIP 기반은 외부로 서비스를 제공해야하는 서비스 업자에 유리
 - DNS 기반은 DNS Cache TTL을 관리해야 함
   - 사용하는 언어별 dns 캐싱 정책을 잘 알아야 함
   - 툴에 따라 한 번 가져온 dns 정보를 다시 호출하지 않는 경우도 존재
-
 - redis cluster 사용
 
 ##### Mornitoring factor
-
 - redis info를 통한 정보
   - RSS
   - Used Memory
@@ -332,13 +298,11 @@ ziplist 구조
 - client-output-buffer-limit 설정 필요
 
 ##### Redis as Cache
-
 - cache일 경우는 문제가 적게 발생
   - redis가 문제 있을 때 db 등의 부하가 어느 정도 증가하는지 확인 필요
   - consistent hashing도 실제 부하를 아주 균등하게 나누지는 않음. adaptavie consistent hashing을 이용해 볼 수도 있음
 
 ##### Redis as Persistent store
-
 - 무조건 primary/secondary 구조로 구성이 필요함
 - 메모리를 절대로 빡빡하게 사용하면 안됨
   - 정기적인 migration 필요
