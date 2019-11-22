@@ -17,7 +17,6 @@ tags:
 
 
 ##### 목차
-
 - Redis 소개
 - 왜 Collection이 중요한가
 - Redis 사용
@@ -39,34 +38,23 @@ tags:
 - Only 1 committer(Salvatore Sanfilippo)
 
 #### Cache
-
 - Factorial: 이전에 계산한 값을 저장해서 사용
 - 접근속도가 다름
-
   > **CPU Cache**(disk로 갈수록 capacity 높음, core로 갈수록 속도 빠름)
-  >
-  >Disk
-  >
+  > Disk
   > Memory
-  >
   > L3 cache
-  >
   > L2 cache
-  >
   > L1 cache
-  >
   > Core
-
 - 전체 요청의 80%는 20%의 사용자
 
 ##### Cache 구조 1. Look aside
-
 1. Web server는 데이터가 존재하는지 cache 먼저 확인
 2. Cache에 데이터가 있으면 cache에서 가져온다
 3. Cache에 데이터가 없다면 DB에서 읽어온다.
 
 ##### Cache 구조 2. Write back
-
 1. Web server는 모든 데이터를 cache에만 저장
 2. Cache에 특정 시간 동안의 데이터 저장
 3. Cache에 있는 데이터를 DB에 저장
