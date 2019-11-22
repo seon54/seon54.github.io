@@ -40,13 +40,15 @@ tags:
 #### Cache
 - Factorial: 이전에 계산한 값을 저장해서 사용
 - 접근속도가 다름
-  > **CPU Cache**(disk로 갈수록 capacity 높음, core로 갈수록 속도 빠름)
-  > Disk
-  > Memory
-  > L3 cache
-  > L2 cache
-  > L1 cache
-  > Core
+  ```
+  **CPU Cache**(disk로 갈수록 capacity 높음, core로 갈수록 속도 빠름)
+  Disk
+  Memory
+  L3 cache
+  L2 cache
+  L1 cache
+  Core
+  ```
 - 전체 요청의 80%는 20%의 사용자
 
 ##### Cache 구조 1. Look aside
