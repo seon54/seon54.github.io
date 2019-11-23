@@ -5,7 +5,7 @@ title: Computer Architecture 1강 ~ 5강 정리
 category: Computer Architecture
 shortinfo: 컴퓨터의 역사와 구성요소의 역할
 tags:
-- computer_architecture
+- computer architecture
 ---
 
 
