@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: 우아한 테크 세미나 <우아한 Redis> 후기
+title: 우아한 테크 세미나 - 우아한 Redis 후기
 category: 후기
 shortinfo: 11월 우아한 테크 세미나 <우아한 Redis> 후기
 tags:
