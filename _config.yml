@@ -34,6 +34,7 @@ nav:
     - { JavaScript: '/category/#javascript' }
     - { Node.js: '/category/#nodejs' }
     - { Python: '/category/#python' }
+    - { Java: '/category/#java' }
     - { Docker: '/category/#docker' }
     - { Network: '/category/#network' }
     - { Computer Architecture: '/category/#computer architecture' }
