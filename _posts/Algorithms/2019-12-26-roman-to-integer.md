@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: (LeetCode Top Interview Questions-Easy) Roman to Integer
 category: Algorithms
-shortinfo: 
+shortinfo: LeetCode Top Interview Questions(Easy) Roman to Integer 살펴보기
 tags:
 - leet code
 ---
