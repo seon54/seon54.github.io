@@ -5,7 +5,7 @@ title: Windows에서 Django와 Apache 연동하기
 category: python
 shortinfo: Windows에서 Django와 Apache 연동하는 방법을 알아봅니다.
 tags:
-- python
+- apache
 - django
 ---
 
