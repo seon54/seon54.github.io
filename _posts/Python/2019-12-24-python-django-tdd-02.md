@@ -408,7 +408,7 @@ class HomePageTest(TestCase):
         self.assertIn(b'<title>To-Do lists</title>', response.content)
         self.assertTrue(response.content.endswith(b'</html>'))
 ```
-테스트를 하면 home_page()에는 인자를 갖지 않지만 1개의 인자가 들어있다는 에러를 확인할 수 있다.
+테스트를 하면 home_page()에는 전달인자를 갖지 않지만 1개의 전달인자가 들어있다는 에러를 확인할 수 있다.
 
 > Creating test database for alias 'default'...
 > System check identified no issues (0 silenced).
