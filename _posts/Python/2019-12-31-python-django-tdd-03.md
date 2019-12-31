@@ -260,15 +260,13 @@ class HomePageTest(TestCase):
 
 우선 책의 디버깅 방법에 따라 time.sleep()을 추가하고 다시 테스트를 해본다.
 
-```python
-				...
+```python				
 				inputbox.send_keys(Keys.ENTER)
 
         import time
         time.sleep(10)
 
         table = self.browser.find_element_by_id('id_list_table')
-        ...
 ```
 
 브라우저에서 CSRF 에러 화면이 나오고 커맨드는 책과 같은 에러가 나왔다.
