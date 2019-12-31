@@ -212,8 +212,8 @@ class HomePageTest(TestCase):
 해당 id를 가진 table을 추가한다.
 
 ```html
-		<input id="id_new_item" placeholder="작업 아이템 입력">
-    <table id="id_list_table"></table>
+<input id="id_new_item" placeholder="작업 아이템 입력">
+<table id="id_list_table"></table>
 ```
 
 또 다시 AssertionError가 발생한다. 에러가 발생한 39번째 줄을 보면 assertTrue 함수를 사용하고 있는데 대부분의 assert 함수는 사용자가 정의한 메세지를 인수로 지정할 수 있다. 메세지를 추가한 후 다시 테스트를 해보도록 한다.
@@ -225,10 +225,10 @@ class HomePageTest(TestCase):
 ```python
 # functional_tests.py
 
-		# 생략
-		table = self.browser.find_element_by_id('id_list_table')
-    rows = table.find_elements_by_tag_name('tr')
-		self.assertTrue(any(row.text == '1: 공작깃털 사기' for row in rows), "신규 작업이 테이블에 표시되지 않는다")
+# 생략
+table = self.browser.find_element_by_id('id_list_table')
+rows = table.find_elements_by_tag_name('tr')
+self.assertTrue(any(row.text == '1: 공작깃털 사기' for row in rows), "신규 작업이 테이블에 표시되지 않는다")
 
 ```
 
@@ -245,13 +245,11 @@ class HomePageTest(TestCase):
 마지막 기능 테스트에서는 신규 작업이 저장되지 않아 테이블에 표시되지 않았기 때문에 POST 요청을 통해 사용자 입력을 저장하도록 한다. POST 요청을 보내기 위해서 input에 name 속성도 추가해준다.
 
 ```html
-...
 <h1>Your To-Do lists</h1>
 <form method="post">
     <input name="item_text" id="id_new_item" placeholder="작업 아이템 입력">
 </form>
 <table id="id_list_table"></table>
-...
 ```
 
 테스트를 하자 책과 다른 에러가 발생했다.
@@ -261,12 +259,12 @@ class HomePageTest(TestCase):
 우선 책의 디버깅 방법에 따라 time.sleep()을 추가하고 다시 테스트를 해본다.
 
 ```python				
-				inputbox.send_keys(Keys.ENTER)
+inputbox.send_keys(Keys.ENTER)
 
-        import time
-        time.sleep(10)
+import time
+time.sleep(10)
 
-        table = self.browser.find_element_by_id('id_list_table')
+table = self.browser.find_element_by_id('id_list_table')
 ```
 
 브라우저에서 
@@ -370,6 +368,7 @@ def home_page(request):
 템플릿 구문을 이용하면 views.py에 있는 변수를 템플릿에 전달할 수 있다. 템플릿에 파이썬 객체를 추가하고 테스트 코드도 이에 맞춰 수정하도록 한다. render_to_string 함수 두번째 인수에 변수명과 값을 추가하였다. 
 
 ```html
+{% raw %}
 <table id="id_list_table">
     <tr>
         <td>
@@ -377,6 +376,7 @@ def home_page(request):
         </td>
     </tr>
 </table>
+{% endraw %}
 ```
 
 ```python
@@ -417,12 +417,12 @@ def home_page(request):
 funtional_tests.py를 다시 시도하면 같은 에러메세지가 나와서 에러 메세지를 좀 더 구체적으로 수정하도록 한다.
 
 ```python
-				# 생략
+# 생략
 
-  			table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(any(row.text == '1: 공작깃털 사기' for row in rows),
-                        f"신규 작업이 테이블에 표시되지 않는다 - 해당 텍스트:{table.text}")
+table = self.browser.find_element_by_id('id_list_table')
+rows = table.find_elements_by_tag_name('tr')
+self.assertTrue(any(row.text == '1: 공작깃털 사기' for row in rows),
+                f"신규 작업이 테이블에 표시되지 않는다 - 해당 텍스트:{table.text}")
 ```
 
 혹은 assertTrue를 assertIn으로 수정하는 방법도 있다.
@@ -433,33 +433,35 @@ funtional_tests.py를 다시 시도하면 같은 에러메세지가 나와서 �
 화면에는 공작깃털 사기만 나오고 '1:'이 포함되어 있지 않아서 에러가 발생한 것이다. 가장 빨리 테스트를 통과하는 방법은 템플릿을 수정하는 것이다.
 
 ```html
+{% raw %}
 <td>1: {{ new_item_text }}</td>
+{% endraw %}
 ```
 
 하지만 두번째 아이템을 추가하자 다시 에러가 발생한다. `StaleElementReferenceException` 에러가 발생했기 때문에 중간에 time.sleep()을 추가하였다.
 
 ```python
-				# 생략
-  
-  			self.assertIn('1: 공작깃털 사기', [row.text for row in rows])
-        
-        # 추가 아이템을 입력할 수 있는 여분의 텍스트 상자 존재
-        # 다시 '공작깃털을 이용해서 그물 만들기' 입력
-        inputbox = self.browser.find_element_by_id('id_new_item')
-        inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
-        inputbox.send_keys(Keys.ENTER)
+# 생략
 
-        import time
-        time.sleep(1)
+self.assertIn('1: 공작깃털 사기', [row.text for row in rows])
 
-        # 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보임
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        self.assertIn('1: 공작깃털 사기', [row.text for row in rows])
-        self.assertIn('2: 공작깃털을 이용해서 그물 만들기', [row.text for row in rows])
+# 추가 아이템을 입력할 수 있는 여분의 텍스트 상자 존재
+# 다시 '공작깃털을 이용해서 그물 만들기' 입력
+inputbox = self.browser.find_element_by_id('id_new_item')
+inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
+inputbox.send_keys(Keys.ENTER)
 
-        # 입력한 목록을 저장하는 URL 생성
-        self.fail('Finish the test!')
+import time
+time.sleep(1)
+
+# 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보임
+table = self.browser.find_element_by_id('id_list_table')
+rows = table.find_elements_by_tag_name('tr')
+self.assertIn('1: 공작깃털 사기', [row.text for row in rows])
+self.assertIn('2: 공작깃털을 이용해서 그물 만들기', [row.text for row in rows])
+
+# 입력한 목록을 저장하는 URL 생성
+self.fail('Finish the test!')
 ```
 
 테스트를 하자 아래의 에러가 발생했다.
@@ -598,13 +600,13 @@ def home_page(request):
 ```python
 # lists/tests.py
 
-	def test_home_page_can_save_a_POST_request(self):
-     # 생략
-    
-  def test_home_page_only_saves_items_when_necessary(self):
-     request = HttpRequest()
-     home_page(request)
-     self.assertEqual(Item.objects.count(), 0)
+def test_home_page_can_save_a_POST_request(self):
+   # 생략
+
+def test_home_page_only_saves_items_when_necessary(self):
+   request = HttpRequest()
+   home_page(request)
+   self.assertEqual(Item.objects.count(), 0)
 ```
 
 `AssertionError: 1 != 0` 에러 메세지를 확인할 수 있다. views.py에서 좀 더 수정이 필요하다. POST 요청일 때는 item_text의 값을 가져와서 create() 메서드로 새로운 Item 객체를 생성한다. 이와 동시에 text에 가져온 값도 저장한다. 수정 후 테스트를 통과한다.
@@ -662,26 +664,26 @@ test_home_page_can_save_a_POST_request 테스트가 두 가지의 기능을 테�
 ```python
 # lists/tests.py
 
-		def test_home_page_can_save_a_POST_request(self):
-        request = HttpRequest()
-        request.method = 'POST'
-        request.POST['item_text'] = '신규 작업 아이템'
+def test_home_page_can_save_a_POST_request(self):
+    request = HttpRequest()
+    request.method = 'POST'
+    request.POST['item_text'] = '신규 작업 아이템'
 
-        response = home_page(request)
+    response = home_page(request)
 
-        self.assertEqual(Item.objects.count(), 1)
-        new_item = Item.objects.first()
-        self.assertEqual(new_item.text, '신규 작업 아이템')
+    self.assertEqual(Item.objects.count(), 1)
+    new_item = Item.objects.first()
+    self.assertEqual(new_item.text, '신규 작업 아이템')
 
-    def test_home_page_redirects_after_POST(self):
-        request = HttpRequest()
-        request.method = 'POST'
-        request.POST['item_text'] = '신규 작업 아이템'
+def test_home_page_redirects_after_POST(self):
+    request = HttpRequest()
+    request.method = 'POST'
+    request.POST['item_text'] = '신규 작업 아이템'
 
-        response = home_page(request)
+    response = home_page(request)
 
-        self.assertEqual(response.status_code, 302)
-        self.assertEqual(response['location'], '/')
+    self.assertEqual(response.status_code, 302)
+    self.assertEqual(response['location'], '/')
 ```
 
 ### 템플릿에 있는 아이템 렌더링
@@ -705,11 +707,13 @@ test_home_page_can_save_a_POST_request 테스트가 두 가지의 기능을 테�
 `AssertionError: 'item 1' not found` 에러메세지와 함께 테스트가 실패한다. 템플릿에서 for loop로 리스트를 처리하도록 한다. 그리고 템플릿으로 객체를 전달하도록 views.py 또한 수정한다.
 
 ```html
+{% raw %}
 <table id="id_list_table">
     {% for item in items %}
         <tr><td>1: {{ item.text }}</td></tr>
     {% endfor %}
 </table>
+{% endraw %}
 ```
 
 ```python
@@ -725,8 +729,10 @@ def home_page(request):
 단위 테스트는 통과했지만 기능 테스트는 `AssertionError: 'To-Do' not found in 'OperationalError at /'` 메세지와 함께 실패한다. http://localhost:8000 에 들어가면 `no such table: lists_item `이라는 디버그 메세지를 확인할 수 있다. 마이그레이션은 했지만 진짜 데이터베이스를 만들지 않았기 때문이다. `python manage.py migrate` 명령어를 실행하도록 한다. 이제 아까와 같은 에러는 뜨지 않고 아이템 번호만 수정하면 된다. 템플릿 태그의 `forloop.counter` 를  사용하도록 한다.
 
 ```html
+{% raw %}
     {% for item in items %}
         <tr><td>{{ forloop.counter }}: {{ item.text }}</td></tr>
     {% endfor %}
+{% endraw %}
 ```
 
