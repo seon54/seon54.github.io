@@ -260,18 +260,18 @@ class HomePageTest(TestCase):
 
 우선 책의 디버깅 방법에 따라 time.sleep()을 추가하고 다시 테스트를 해본다.
 
-```python
-				...
+```python				
 				inputbox.send_keys(Keys.ENTER)
 
         import time
         time.sleep(10)
 
         table = self.browser.find_element_by_id('id_list_table')
-        ...
 ```
 
-브라우저에서 CSRF 에러 화면이 나오고 커맨드는 책과 같은 에러가 나왔다.
+브라우저에서 
+
+에러 화면이 나오고 커맨드는 책과 같은 에러가 나왔다.
 
 > selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: [id="id_list_table"]
 
@@ -307,7 +307,7 @@ home_page 뷰에 적용할 새로운 단위 테스트를 추가하도록 한다.
         self.assertIn('신규 작업 아이템', response.content.decode())
 ```
 
-테스트를 하자 책과 다르게 3개의 테스트 중 2개가 실패했다고 나왔다. csrf token을 추가하면서 기존의 test_home_page_returns_correct_html 테스트도 문제가 생긴 것이다.
+테스트를 하자 책과 다르게 3개의 테스트 중 2개가 실패했다고 나왔다. csrf 토큰을 추가하면서 기존의 test_home_page_returns_correct_html 테스트도 문제가 생긴 것이다.
 
 > FAIL: test_home_page_can_save_a_POST_request (lists.tests.HomePageTest)
 > Traceback (most recent call last):
