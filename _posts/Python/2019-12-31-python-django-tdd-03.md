@@ -275,7 +275,7 @@ class HomePageTest(TestCase):
 
 > selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: [id="id_list_table"]
 
-템플릿에 csrf token을 추가하도록 한다.
+템플릿에 csrf 토큰을 추가하도록 한다.
 
 ```html
 <form method="post">
@@ -320,7 +320,7 @@ home_page 뷰에 적용할 새로운 단위 테스트를 추가하도록 한다.
 >     self.assertEqual(response.content.decode(), expected_html)
 > AssertionError: '<htm[180 chars]n    <input type="hidden" name="csrfmiddleware[141 chars]l>\n' != '<htm[180 chars]n    \n</form>\n<table id="id_list_table"></ta[20 chars]l>\n'
 
-다행히 google groups에서 이 책의 그룹을 찾아 해결책도 찾을 수 있었다. 템플릿에 추가한 csrf token 템플릿 태그는 \<input type='hidden'>으로 변환되는데 이 input 태그를 없애는 함수를 추가했다.
+다행히 google groups에서 이 책의 그룹을 찾아 해결책도 찾을 수 있었다. 템플릿에 추가한 csrf 토큰 템플릿 태그는 \<input type='hidden'>으로 변환되는데 이 input 태그를 없애는 함수를 추가했다.
 
 ```python
 import re
