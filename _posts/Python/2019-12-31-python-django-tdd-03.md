@@ -16,7 +16,7 @@ tags:
 
 ### selenium을 이용한 사용자 반응 테스트
 
-이전 장에 이어 functional_test.py에 테스트 할 내용을 아래와 같이 추가한다. selenium이 제공하는 다양헨 메서드로 tag 또는 id로 찾고자 하는 요소를 명확히 할 수 있다.
+이전 장에 이어 functional_test.py에 테스트 할 내용을 아래와 같이 추가한다. selenium이 제공하는 다양한 메서드로 tag 또는 id로 찾고자 하는 요소를 명확히 할 수 있다.
 
 ```python
 import unittest
@@ -278,10 +278,12 @@ class HomePageTest(TestCase):
 템플릿에 csrf 토큰을 추가하도록 한다.
 
 ```html
+{% \raw %}
 <form method="post">
     <input name="item_text" id="id_new_item" placeholder="작업 아이템 입력">
     {% csrf_token %}
 </form>
+{% \endraw %}
 ```
 
 다시 테스트하면 다시 AssertionError가 발생하는데 이는 POST 요청을 아직 서버와 연결하지 않았기 때문이다.
@@ -368,11 +370,6 @@ def home_page(request):
 템플릿 구문을 이용하면 views.py에 있는 변수를 템플릿에 전달할 수 있다. 템플릿에 파이썬 객체를 추가하고 테스트 코드도 이에 맞춰 수정하도록 한다. render_to_string 함수 두번째 인수에 변수명과 값을 추가하였다. 
 
 ```html
-<!-- 생략 -->
-<form method="post">
-    <input name="item_text" id="id_new_item" placeholder="작업 아이템 입력">
-    {% csrf_token %}
-</form>
 <table id="id_list_table">
     <tr>
         <td>
@@ -380,7 +377,6 @@ def home_page(request):
         </td>
     </tr>
 </table>
-...
 ```
 
 ```python
