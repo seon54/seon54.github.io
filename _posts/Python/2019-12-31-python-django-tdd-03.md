@@ -16,7 +16,7 @@ tags:
 
 ### selenium을 이용한 사용자 반응 테스트
 
-이전 장에 이어 functional_test.py에 테스트 할 내용을 아래와 같이 추가한다. selenium이 제공하는 다양헨 메서드로 tag 또는 id로 찾고자 하는 요소를 명확히 할 수 있다.
+이전 장에 이어 functional_test.py에 테스트 할 내용을 아래와 같이 추가한다. selenium이 제공하는 다양한 메서드로 tag 또는 id로 찾고자 하는 요소를 명확히 할 수 있다.
 
 ```python
 import unittest
