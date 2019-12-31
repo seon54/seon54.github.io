@@ -278,12 +278,12 @@ class HomePageTest(TestCase):
 템플릿에 csrf 토큰을 추가하도록 한다.
 
 ```html
-{% \raw %}
+{% raw %}
 <form method="post">
     <input name="item_text" id="id_new_item" placeholder="작업 아이템 입력">
     {% csrf_token %}
 </form>
-{% \endraw %}
+{% endraw %}
 ```
 
 다시 테스트하면 다시 AssertionError가 발생하는데 이는 POST 요청을 아직 서버와 연결하지 않았기 때문이다.
