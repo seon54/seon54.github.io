@@ -163,6 +163,7 @@ sub $s4, $s1, $s5
 |    word     | 32 bit |
 |  half word  | 16 bit |
 |    byte     | 8 bit  |
+
 - MIPS 명령어 및 레지스터는 32 bit로 구성
 
 ##### 메모리 피연산자
