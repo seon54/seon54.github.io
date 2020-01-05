@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: Mac에서 apache & django 연동하기
-category: python
+category: Python
 shortinfo: Mac에서 apache httpd와 mod_wsgi 설치하고 django 연동하기
 tags:
 - django
