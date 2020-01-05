@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: Computer Architecture 6강 ~ 10강 정리
 category: Computer Architecture
-shortinfo: 
+shortinfo: 전력과 CPU의 발달 과정, 명령어에 대한 정리
 tags:
 - computer architecture
 ---
