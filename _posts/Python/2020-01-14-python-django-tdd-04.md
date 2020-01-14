@@ -259,7 +259,7 @@ def view_list(request):
 
 ```html
 <!-- lists/templates/home.html -->
-
+{% raw %}
 <html>
 <head>
     <title>To-Do lists</title>
@@ -272,12 +272,14 @@ def view_list(request):
 </form>
 </body>
 </html>
+{% endraw %}
 ```
 
 단위 테스트는 통과하지만 기능 테스트는 계속 두번째 아이템 입력에서 실패한다. list.html에서 \<form>에 action 속성이 없어 테스트를 할 때마다 동일 URL로 form이 전송되었다. list.html을 수정하고 다시 테스트를 한다.
 
 ```html
 <!-- lists/templates/list.html -->
+{% raw %}
 <html>
 <head>
     <title>To-Do lists</title>
@@ -295,6 +297,7 @@ def view_list(request):
 </table>
 </body>
 </html>
+{% endraw %}
 ```
 
 아이템을 새로 추가하게 되고 에디스와 프란시스의 URL을 확인하는 부분에서 에러가 발생한다.
