@@ -177,7 +177,7 @@ Django에서는 정적 파일 URL을 설정할 수 있다. superlists/settings.p
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 ```
 
-그리고 base.html에는 django template language를 이용해서 정적 파일을 불러오도록 했다. \<link>의 href에서도 `{% static %}` 을 사용하여 settings.py에 설정된 STATIC_URL 이후의 주소를 추가하도록 해야한다.
+그리고 base.html에는 django template language를 이용해서 정적 파일을 불러오도록 했다. \<link>의 href에서도 static 을 사용하여 settings.py에 설정된 STATIC_URL 이후의 주소를 추가하도록 해야한다.
 
 ```django
 {% raw %}
