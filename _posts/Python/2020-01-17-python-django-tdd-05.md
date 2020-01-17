@@ -66,7 +66,7 @@ class NewVisitorTest(LiveServerTestCase):
 
 ### django 템플릿 상속
 
-`diff lists/templates/home.html lists/templates/list.html` 명령어를 실행하면 두 파일의 다른 점을 확인할 수 있는데 공통된 부분은 템플릿을 만들어서 상속하도록 한다. home.html을 복사하여 base.html 파일을 만들고 상속한 템플릿이 수정할 수 있는 부분인 `{% block %}`을 추가한다.
+`diff lists/templates/home.html lists/templates/list.html` 명령어를 실행하면 두 파일의 다른 점을 확인할 수 있는데 공통된 부분은 템플릿을 만들어서 상속하도록 한다. home.html을 복사하여 base.html 파일을 만들고 상속한 템플릿이 수정할 수 있는 부분인 block을 추가한다.
 
 ```html
 {% raw %}
