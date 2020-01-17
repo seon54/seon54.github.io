@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: 파이썬을 이용한 클린 코드를 위한 테스트 주도 개발 7장
 category: Python
-shortinfo:  
+shortinfo: 스타일 추가하여 테스트하고 정적 파일 배포 준비하기
 tags:
 - python
 - django
@@ -241,7 +241,9 @@ input에는 id_new_item이라는 id도 있다. static/base.css 파일을 만들�
 ```
 
 ```html
+{% raw %}
 <link href="{% static 'base.css' %}" rel="stylesheet" media="screen">
+{% endraw %}
 ```
 
 ### collectstatic
