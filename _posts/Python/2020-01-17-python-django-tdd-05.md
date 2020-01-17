@@ -91,15 +91,18 @@ class NewVisitorTest(LiveServerTestCase):
 
 ```django
 {# home.html #}
+{% raw %}
 {% extends 'base.html' %}
 
 {% block header_text %}Your To-Do list{% endblock %}
 
 {% block form_action %}/lists/new{% endblock %}
+{% endraw %}
 ```
 
 ```django
 {# list.html #}
+{% raw %}
 {% extends 'base.html' %}
 
 {% block header_text %}Your To-do list{% endblock %}
@@ -115,6 +118,7 @@ class NewVisitorTest(LiveServerTestCase):
         {% endfor %}
     </table>
 {% endblock %}
+{% endraw %}
 ```
 
 기능 테스트를 실행하면 여전히 `AssertionError: 80.33333587646484 != 512 within 10 delta` 에러가 뜬다.
@@ -176,6 +180,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 그리고 base.html에는 django template language를 이용해서 정적 파일을 불러오도록 했다. \<link>의 href에서도 `{% static %}` 을 사용하여 settings.py에 설정된 STATIC_URL 이후의 주소를 추가하도록 해야한다.
 
 ```django
+{% raw %}
 {% load static %}
 <html>
 <head>
@@ -183,6 +188,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" media="screen">
 </head>
+{% endraw %}
 ```
 
 정적 파일을 불러올 수 있음에도 불구하고 여전히 기능 테스트를 실패하게 되는데 LiveServerTestCase 클래스가 정적 파일을 자동으로 찾을 수 없기 때문이다. StaticLiveServerTestCase 클래스로 변경하고 테스트를 실행하면 통과하게 된다.
