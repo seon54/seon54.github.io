@@ -6,7 +6,7 @@ category: Java
 shortinfo: 상속, 다형성 정리
 tags:
 - java
-- OOP
+
 ---
 
 

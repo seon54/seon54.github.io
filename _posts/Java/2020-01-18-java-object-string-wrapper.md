@@ -6,7 +6,7 @@ category: Java
 shortinfo: Object, String, Wrapper 클래스 정리
 tags:
 - java
-- OOP
+
 ---
 
 

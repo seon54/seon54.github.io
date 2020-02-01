@@ -6,7 +6,7 @@ category: Java
 shortinfo: 추상클래스, 인터페이스 정리
 tags:
 - java
-- OOP
+
 ---
 
 

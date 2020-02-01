@@ -6,7 +6,7 @@ category: Java
 shortinfo: 
 tags:
 - java
-- OOP
+
 ---
 
 

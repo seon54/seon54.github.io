@@ -6,7 +6,6 @@ category: Java
 shortinfo: 배열, 다차원 배열, ArrayList 정리
 tags:
 - java
-- OOP
 ---
 
 
