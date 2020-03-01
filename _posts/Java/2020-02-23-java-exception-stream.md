@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: 객체지향 프로그래밍(62강 - 72rkd)
+title: 객체지향 프로그래밍(62강 - 72강)
 category: Java
 shortinfo: 예외 처리, 스트림 정리
 tags:
