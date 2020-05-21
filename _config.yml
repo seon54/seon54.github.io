@@ -31,6 +31,7 @@ nav:
     - '/about/'
   Category:           
     - '/category/'
+    - { Web: '/category/#web' }
     - { JavaScript: '/category/#javascript' }
     - { Node.js: '/category/#nodejs' }
     - { Python: '/category/#python' }
