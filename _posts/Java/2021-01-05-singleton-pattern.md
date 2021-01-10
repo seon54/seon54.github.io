@@ -9,13 +9,9 @@ tags:
 - design pattern
 ---
 
-
-
-## 싱글톤 패턴(Singleton Pattern)
-
 >Head First Design Patterns & GoF의 디자인 패턴 정리
 
-
+## 싱글톤 패턴(Singleton Pattern)
 
 ### 방법
 
@@ -66,5 +62,4 @@ public enum Elvis {
 
 
 >**참조**
->토비의 스프링 3.1
->Effective Java 3/e
+>토비의 스프링 3.1, Effective Java 3/e
