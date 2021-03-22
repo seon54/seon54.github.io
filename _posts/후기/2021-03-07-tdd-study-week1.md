@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title: TDD, Clean Code 스터디 1주차
-category: Java
+category: 후기
 shortinfo: TDD 스터디 1주차
 tags:
 - java
